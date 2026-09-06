@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Performance Manager for Firefox</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="brand-row">
+      <img class="brand-icon" src="icons/icon-96.png" alt="Performance Manager for Firefox icon">
+      <div>
+        <div class="eyebrow">PERFORMANCE MANAGER FOR FIREFOX</div>
+        <div class="title-row">
+          <h1>Performance Manager for Firefox</h1>
+          <span class="version">1.0.1</span>
+        </div>
+        <p class="subtitle">Keep Firefox responsive by intelligently sleeping inactive tabs.</p>
+        <p class="author">by <strong>Mihai Lungu</strong></p>
+      </div>
+    </div>
+  </header>
+
+  <section class="dashboard">
+    <div class="section-heading">
+      <div><span class="kicker">OVERVIEW</span><h2>Performance status</h2></div>
+      <span id="liveStatus" class="status-pill">● Loading</span>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><span>Awake</span><strong id="awakeCount">—</strong><small>active in memory</small></div>
+      <div class="stat-card"><span>Sleeping</span><strong id="sleepingCount">—</strong><small>content unloaded</small></div>
+      <div class="stat-card"><span>Total tabs</span><strong id="totalCount">—</strong><small>across all windows</small></div>
+      <div class="stat-card"><span>Optimization</span><strong id="score">—</strong><small>internal efficiency score</small></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-heading"><div><span class="kicker">MEMORY</span><h2>Automatic tab sleeping</h2></div></div>
+    <label class="switch-row"><span><strong>Automatically put tabs to sleep</strong><small>Unload inactive tab content while keeping the tab visible.</small></span><input type="checkbox" id="enabled"><span class="switch"></span></label>
+    <div class="settings-grid">
+      <label>Sleep inactive tabs after
+        <select id="idleMinutes">
+          <option value="1">1 minute</option><option value="2">2 minutes</option><option value="5">5 minutes</option><option value="10">10 minutes</option><option value="15">15 minutes</option><option value="30">30 minutes</option><option value="60">60 minutes</option>
+        </select>
+      </label>
+      <label>Check every
+        <select id="checkSeconds">
+          <option value="5">5 seconds</option><option value="10">10 seconds</option><option value="30">30 seconds</option><option value="60">1 minute</option><option value="120">2 minutes</option><option value="300">5 minutes</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-heading"><div><span class="kicker">RESOURCE CONTROL</span><h2>Awake tab limit</h2></div></div>
+    <label class="switch-row"><span><strong>Limit the number of awake tabs</strong><small>Oldest eligible inactive tabs are discarded first.</small></span><input type="checkbox" id="maxAwakeTabsEnabled"><span class="switch"></span></label>
+    <label>Maximum awake tabs
+      <select id="maxAwakeTabs"><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="8">8</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="30">30</option><option value="50">50</option></select>
+    </label>
+    <button id="free" class="primary">Free memory now</button>
+    <button id="discard" class="secondary">Run automatic cleanup</button>
+  </section>
+
+  <section>
+    <div class="section-heading"><div><span class="kicker">PROTECTION</span><h2>Protected tabs</h2></div></div>
+    <label class="check-row"><input type="checkbox" id="skipPinned"><span>Never sleep pinned tabs</span></label>
+    <label class="check-row"><input type="checkbox" id="skipAudible"><span>Never sleep tabs producing audio</span></label>
+    <label class="check-row"><input type="checkbox" id="skipPlaying"><span>Never sleep tabs that are still loading</span></label>
+    <label class="check-row"><input type="checkbox" id="skipPrivate"><span>Never sleep private-window tabs</span></label>
+    <label>Always keep these sites active
+      <textarea id="excludedDomains" placeholder="youtube.com&#10;mail.google.com&#10;github.com"></textarea>
+    </label>
+  </section>
+
+  <section>
+    <div class="section-heading"><div><span class="kicker">ACTIVITY</span><h2>Activity log</h2></div><button id="clearLog" class="tiny-button">Clear log</button></div>
+    <div id="activityLog" class="activity-log"><div class="empty">Loading activity…</div></div>
+  </section>
+
+  <section class="about-card">
+    <div class="about-icon"><img src="icons/icon-48.png" alt=""></div>
+    <div><span class="kicker">ABOUT</span><h2>Performance Manager for Firefox</h2><p>Version 1.0.1 · Developed by <strong>Mihai Lungu</strong></p><p class="muted">This extension works locally in Firefox. It does not collect or transmit browsing data.</p></div>
+  </section>
+
+  <div class="actions"><button id="save" class="primary">Save settings</button><span id="saved"></span></div>
+  <p class="note"><b>About RAM limits:</b> Firefox WebExtensions cannot directly impose a 1 GB / 2 GB process-memory limit like an internal browser resource controller. This extension manages tab state and inactivity instead.</p>
+  <footer>Performance Manager for Firefox · 1.0.1 · Mihai Lungu</footer>
+</main>
+<script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Performance Manager for Firefox",
+  "version": "1.0.1",
+  "author": "Mihai Lungu",
+  "description": "Keep Firefox responsive by intelligently sleeping inactive tabs and reducing unnecessary memory usage.",
+  "permissions": ["tabs", "alarms", "storage"],
+  "browser_action": {
+    "default_title": "Performance Manager for Firefox",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/icon-48.png"
+    }
+  },
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "firefox-performance-manager@mihai-lungu",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}

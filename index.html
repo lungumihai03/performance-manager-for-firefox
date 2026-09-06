@@ -1,17 +1,99 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Performance Manager for Firefox</title>
-<meta name="description" content="Keep Firefox responsive by intelligently sleeping inactive tabs and reducing resource usage.">
-<link rel="icon" href="assets/icon-96.png"><link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header class="nav"><a class="brand" href="index.html"><img src="assets/icon-96.png"> <span>Performance Manager <small>for Firefox</small></span></a><nav><a class="active" href="index.html">Home</a><a href="updates.html">Updates</a><a href="contact.html">Contact</a></nav></header>
-<main>
-<section class="hero"><div><span class="eyebrow">Firefox extension · v1.0.1</span><h1>Keep Firefox <em>responsive.</em></h1><p>Performance Manager for Firefox intelligently puts inactive tabs to sleep, helping reduce resource usage while keeping your tabs ready when you need them.</p><div class="actions"><a class="button primary" href="https://addons.mozilla.org/firefox/addon/performance-manager/">Get it on Firefox Add-ons</a><a class="button" href="updates.html">See what's new</a></div></div><div class="hero-card"><img src="assets/icon-96.png"><strong>Performance Manager</strong><span>Smart tab resource management</span><div class="stats"><b>Smart Modes</b><b>Site Rules</b><b>Activity Log</b></div></div></section>
-<section class="section"><div class="section-head"><span class="eyebrow">What it does</span><h2>More control over inactive tabs.</h2><p>Designed to stay simple: protect the tabs that matter and let inactive tabs sleep automatically.</p></div><div class="grid"><article><span class="icon">◴</span><h3>Automatic sleeping</h3><p>Choose how long an inactive tab should remain awake before it becomes eligible for sleeping.</p></article><article><span class="icon">⚡</span><h3>Smart memory modes</h3><p>Balanced, Aggressive, Maximum Savings and Custom modes make it easy to choose your preferred behavior.</p></article><article><span class="icon">▦</span><h3>Tab manager</h3><p>See awake and sleeping tabs, inspect inactivity and manually sleep or keep tabs awake.</p></article><article><span class="icon">◎</span><h3>Site rules</h3><p>Keep important websites awake or give individual domains their own sleep timeout.</p></article><article><span class="icon">◫</span><h3>Activity log</h3><p>See when tabs were slept, restored, skipped or affected by resource limits.</p></article><article><span class="icon">✓</span><h3>Local by design</h3><p>No analytics, tracking or external servers. Settings and activity data stay in Firefox.</p></article></div></section>
-<section class="split"><div><span class="eyebrow">How it works</span><h2>A simple tab lifecycle.</h2><p>When a tab becomes inactive, the manager records when it was last used. Once the configured conditions are met, the eligible tab is discarded from memory. Selecting it again lets Firefox restore the page.</p></div><div class="flow"><span>ACTIVE</span><i>→</i><span>INACTIVE</span><i>→</i><span>SLEEPING</span><i>→</i><span>RESTORED</span></div></section>
-<section class="notice"><strong>Important:</strong> the extension does not impose a hard RAM limit on Firefox. It reduces resource usage by unloading eligible inactive tab content from memory.</section>
-</main><footer><span>© 2026 Mihai Lungu</span><span>Performance Manager for Firefox · v1.0.1</span></footer>
-</body></html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Performance Manager for Firefox</title>
+        <meta name="description"
+            content="Keep Firefox responsive by intelligently sleeping inactive tabs and reducing resource usage.">
+        <link rel="icon" href="assets/icon-96.png">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header class="nav"><a class="brand" href="index.html"><img src="assets/icon-96.png"> <span>Performance Manager
+                    <small>for Firefox</small></span></a>
+            <nav><a class="active" href="index.html">Home</a><a href="updates.html">Updates</a><a
+                    href="contact.html">Contact</a></nav>
+        </header>
+        <main>
+            <section class="hero">
+                <div>
+                    <span class="eyebrow">Firefox extension · v1.0.1</span>
+                    <h1>Keep Firefox
+                        <em>responsive.</em>
+                    </h1>
+                    <p>Performance Manager for Firefox intelligently puts inactive tabs to sleep, helping reduce
+                        resource usage while keeping your tabs ready when you need them.</p>
+                    <div class="actions">
+                        <a class="button primary"
+                            href="https://addons.mozilla.org/firefox/addon/performance-manager/">Get it on Firefox
+                            Add-ons</a>
+                        <a class="button" href="updates.html">See what's new</a>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <img src="assets/icon-96.png">
+                    <strong>Performance Manager</strong>
+                    <span>Smart tab resource management</span>
+                    <div class="stats">
+                        <b>Smart Modes</b>
+                        <b>Site Rules</b>
+                        <b>Activity Log</b>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="section-head"><span class="eyebrow">What it does</span>
+                    <h2>More control over inactive tabs.</h2>
+                    <p>Designed to stay simple: protect the tabs that matter and let inactive tabs sleep automatically.
+                    </p>
+                </div>
+                <div class="grid">
+                    <article><span class="icon">◴</span>
+                        <h3>Automatic sleeping</h3>
+                        <p>Choose how long an inactive tab should remain awake before it becomes eligible for sleeping.
+                        </p>
+                    </article>
+                    <article><span class="icon">⚡</span>
+                        <h3>Smart memory modes</h3>
+                        <p>Balanced, Aggressive, Maximum Savings and Custom modes make it easy to choose your preferred
+                            behavior.</p>
+                    </article>
+                    <article><span class="icon">▦</span>
+                        <h3>Tab manager</h3>
+                        <p>See awake and sleeping tabs, inspect inactivity and manually sleep or keep tabs awake.</p>
+                    </article>
+                    <article><span class="icon">◎</span>
+                        <h3>Site rules</h3>
+                        <p>Keep important websites awake or give individual domains their own sleep timeout.</p>
+                    </article>
+                    <article><span class="icon">◫</span>
+                        <h3>Activity log</h3>
+                        <p>See when tabs were slept, restored, skipped or affected by resource limits.</p>
+                    </article>
+                    <article><span class="icon">✓</span>
+                        <h3>Local by design</h3>
+                        <p>No analytics, tracking or external servers. Settings and activity data stay in Firefox.</p>
+                    </article>
+                </div>
+            </section>
+            <section class="split">
+                <div><span class="eyebrow">How it works</span>
+                    <h2>A simple tab lifecycle.</h2>
+                    <p>When a tab becomes inactive, the manager records when it was last used. Once the configured
+                        conditions are met, the eligible tab is discarded from memory. Selecting it again lets Firefox
+                        restore the page.</p>
+                </div>
+                <div class="flow">
+                    <span>ACTIVE</span><i>→</i><span>INACTIVE</span><i>→</i><span>SLEEPING</span><i>→</i><span>RESTORED</span>
+                </div>
+            </section>
+            <section class="notice"><strong>Important:</strong> the extension does not impose a hard RAM limit on
+                Firefox. It reduces resource usage by unloading eligible inactive tab content from memory.</section>
+        </main>
+        <footer><span>© 2026 Mihai Lungu</span><span>Performance Manager for Firefox · v1.0.1</span></footer>
+    </body>
+
+</html>
